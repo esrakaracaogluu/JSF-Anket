@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<head>
+<title>Staj Basvuru</title>
+<style>
+.hata {
+	color: red;
+}
+</style>
+</head>
+<body
+	background="https://static3.depositphotos.com/1003904/164/v/950/depositphotos_1648604-stock-illustration-abstract-business-background.jpg">
+	<h:form>
+		<h:panelGrid columns="1">
+			<h1>Eğitim Bilgileri</h1>
+			<br />
+			<b><h:outputText value="Okul:" /></b>
+			<h:selectOneMenu value="#{basvuru.okul}">
+				<f:selectItems value="#{basvuru.okullar}" />
+			</h:selectOneMenu>
+			<br />
+			<b><h:outputText value="Bölüm:" /></b>
+			<h:selectOneMenu value="#{basvuru.bolum}">
+				<f:selectItems value="#{basvuru.bolumler}" />
+			</h:selectOneMenu>
+			<br />
+			<b><h:outputText value="Ortalama:" /></b>
+			<h:selectOneRadio id="ortalama" value="#{basvuru.ortalama}"
+				required="true" requiredMessage="Lütfen ortalama seçiniz!">
+				<f:selectItem itemValue="1.0-2.0" itemLabel="1.0-2.0" />
+				<f:selectItem itemValue="2.0-2.5" itemLabel="2.0-2.5" />
+				<f:selectItem itemValue="2.5-3.0" itemLabel="2.5-3.0" />
+				<f:selectItem itemValue="3.0-3.5" itemLabel="3.0-3.5" />
+				<f:selectItem itemValue="3.5-4.0" itemLabel="3.5-4.0" />
+			</h:selectOneRadio>
+			<h:message for="ortalama" styleClass="hata" />
+			<br />
+			<b><h:outputText value="Eğitim Durumu:" /></b>
+			<h:selectOneRadio id="egitimDurumu" value="#{basvuru.egitimDurumu}"
+				required="true"
+				requiredMessage="Eğitim durumunun seçilmesi zorunludur!">
+				<f:selectItem itemLabel="1.Sinif" itemValue="1.Sinif" />
+				<f:selectItem itemLabel="2.Sinif" itemValue="2.Sinif" />
+				<f:selectItem itemLabel="3.Sinif" itemValue="3.Sinif" />
+				<f:selectItem itemLabel="4.Sinif" itemValue="4.Sinif" />
+				<f:selectItem itemLabel="Mezun" itemValue="Mezun" />
+			</h:selectOneRadio>
+			<h:message for="egitimDurumu" styleClass="hata" />
+			<br />
+			<b><h:outputText value="Yabancı Dil:" /> </b>
+			<h:selectManyCheckbox id="yabanciDil" value="#{basvuru.yabanciDil}"
+				required="true"
+				requiredMessage="Yabancı dil seçimi boş bırakılamaz!">
+				<f:selectItem itemLabel="Ingilizce" itemValue="Ingilizce" />
+				<f:selectItem itemLabel="Almanca" itemValue="Almanca" />
+				<f:selectItem itemLabel="Arapca" itemValue="Arapca" />
+			</h:selectManyCheckbox>
+			<h:message for="yabanciDil" styleClass="hata" />
+			<br />
+			<h:commandButton value="İleri" action="ucuncusayfa.xhtml" />
+		</h:panelGrid>
+	</h:form>
+
+</body>
+
+
+
+</html>

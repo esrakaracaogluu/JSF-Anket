@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+
+<title>Staj Basvuru</title>
+<style>
+h1 {
+	color: #B22222;
+	
+}
+</style>
+
+</head>
+<body background="https://static3.depositphotos.com/1003904/164/v/950/depositphotos_1648604-stock-illustration-abstract-business-background.jpg">
+<h:form>
+	<h1 align="center"> STAJYER ADAY BİLGİLERİ </h1>
+	<b><h:outputText value="Uyruk: "/>  </b> #{basvuru.uyruk}
+	<br />
+	<br />
+	<b><h:outputText value="İsim: "/></b> #{basvuru.isim}
+	<br />
+	<br />
+	<b><h:outputText value="Soyisim: "/> </b> : #{basvuru.soyisim}
+	<br />
+	<br />
+	<b><h:outputText value="Cinsiyet: "/></b> : #{basvuru.cinsiyet}
+	<br />
+	<br />
+	<b><h:outputText value="Doğum Yeri: "/></b>#{basvuru.sehir}
+	<br />
+	<br />
+	<b><h:outputText value="E-posta: "/></b>#{basvuru.eposta}
+	<br />
+	<br />
+	<b><h:outputText value="Adres: "/></b> #{basvuru.adres}
+	<br />
+	<br />
+	<b><h:outputText value="Okul: "/></b>#{basvuru.okul}
+	<br />
+	<br />
+	<b><h:outputText value="Bölüm: "/></b> #{basvuru.bolum}
+	<br />
+	<br />
+	<b><h:outputText value="Ortalama: "/></b> #{basvuru.ortalama}
+	<br />
+	<br />
+	<b><h:outputText value="Eğitim Durumu: "/> </b>#{basvuru.egitimDurumu}
+	<br />
+	<br />
+	<b><h:outputText value="Yabancı Dil: "/> </b>
+	<ul>
+		<ui:repeat var="dil" value="#{basvuru.yabanciDil}">
+			<li>#{dil}</li>
+		</ui:repeat>
+	</ul>
+	<br />
+	<h:commandButton value="GONDER" action="#{basvuru.veriTabaninaGonder()}"/>
+	</h:form>
+</body>
+</html>

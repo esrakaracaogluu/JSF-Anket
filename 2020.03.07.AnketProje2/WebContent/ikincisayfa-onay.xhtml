@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<title>Eğitim Bilgileri</title>
+</head>
+<body>
+	<h1>Eğitim Bilgileri</h1>
+
+	<b>Okul: </b>#{basvuru.okul}
+	<br />
+	<br />
+	<b>Bolum:</b> #{basvuru.bolum}
+	<br />
+	<br />
+	<b>Ortalama :</b>
+	<br />
+	<ul>
+		<ui:repeat var="ort" value="#{basvuru.ortalama}">
+			<li>#{ort}</li>
+		</ui:repeat>
+	</ul>
+	<br />
+	<b>Eğitim Durumu: </b>#{basvuru.egitimDurumu}
+	<br />
+	<br />
+	<b>Yabancı Dil:</b> #{basvuru.yabanciDil}
+	<br />
+	<br />
+
+</body>
+
+</html>
